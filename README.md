@@ -1,54 +1,76 @@
-# Mi Agenda v2.0
+# Mi Agenda
 
 Aplicacion web de un solo archivo (index.html) para control de turnos,
-clientes e ingresos de servicios de manicura.
+clientes e ingresos de servicios de manicura. Funciona sin conexion a
+internet una vez cargada, y se puede instalar en la pantalla de inicio
+del celular (Android/iPhone) como una app.
 
-## Novedad de esta version
-- Nuevo icono de marca: calendario + frasco de esmalte (reemplaza el
-  icono anterior de libreta con espiral), integrado en:
-  - El encabezado de la app
-  - El icono para instalar en la pantalla de inicio de Android (manifest)
-  - El favicon de la pestaña del navegador
+## Funciones
 
-## Funciones completas
-- Registro de turnos: cliente, servicio, fecha, hora y costo
-- Costo editable y opcional al crear el turno, y editable tambien tocando
-  directamente el valor en la lista de turnos (edicion rapida)
+### Gestion de turnos
+- Registrar turnos: cliente, servicio, fecha, hora y costo
+- El costo es opcional al crear el turno (se puede dejar en blanco si
+  aun no se sabe el precio) y editable en cualquier momento, incluso
+  tocando directamente el valor en la lista (edicion rapida)
+- Editar o eliminar cualquier turno
 - Los turnos se muestran en el mismo orden en que se van ingresando
-- Formato de hora (24 horas / 12 horas AM-PM), elegible desde "Seguridad"
-- Editar o eliminar turnos
-- Panel con clientes ingresados, pendientes, atendidos e ingresos
-- Exportar los datos a Excel (.xlsx)
-- Modo claro / oscuro (manual o segun el sistema)
-- Seguridad opcional (seccion "Seguridad" dentro de la app):
-  - Contrasena numerica (PIN de 4 a 6 digitos) o alfanumerica
-  - Boton para quitar la contrasena en cualquier momento
-  - Desbloqueo biometrico (huella / Face unlock) en dispositivos compatibles
-- Notificaciones de turnos pendientes (navegador)
-- Instalable en la pantalla de inicio de Android como una app
+- Marcar turnos como "atendido"
+- Formato de hora configurable: 24 horas o 12 horas (AM/PM)
 
-## Instalar en Android (pantalla de inicio)
-1. Abre el sitio publicado en Chrome para Android.
-2. Toca el menu de tres puntos (esquina superior derecha).
-3. Elige "Agregar a pantalla de inicio" o "Instalar aplicacion".
-4. Confirma: quedara con su propio icono (el nuevo de calendario + esmalte)
-   y se abrira a pantalla completa.
+### Panel e ingresos
+- Clientes ingresados, pendientes por agendar/atender, atendidos
+- Total de ingresos (suma de turnos atendidos)
+- Recordatorios automaticos de turnos dentro de las proximas 48 horas
+- Notificaciones del navegador para turnos pendientes
 
-## Subir a GitHub
-Puedes hacerlo de dos formas:
+### Exportar
+- Exportar todos los turnos a un libro de Excel (.xlsx)
 
-**A) Como continuacion del mismo repositorio:**
-Reemplaza el index.html existente por este y sube los cambios (commit).
+### Apariencia
+- Modo claro / oscuro (automatico segun el sistema, o manual)
+- Acuarela de colores de fondo (Lila, Rosa, Durazno, Menta, Cielo),
+  seleccionable desde la seccion Seguridad
+- Logo de marca propio (calendario + frasco de esmalte)
 
-**B) Como un repositorio nuevo:**
-1. Crea un repositorio nuevo en GitHub (por ejemplo "mi-agenda-v2").
-2. Sube este index.html (y este README) a la raiz.
-3. Si quieres GitHub Pages, activalo en Settings > Pages.
+### Seguridad (opcional, se activa cuando se quiere)
+- Contrasena numerica (PIN de 4 a 6 digitos) o alfanumerica, con
+  casillas individuales estilo codigo de verificacion
+- Desbloqueo biometrico (huella / Face ID) en dispositivos compatibles
+- Boton para quitar la contrasena en cualquier momento
+- Recuperacion si se olvida la contrasena (no borra los turnos)
 
-No requiere servidor, base de datos ni build: es HTML/CSS/JS autocontenido.
-Los datos de cada usuaria se guardan en el navegador de su propio
-dispositivo (localStorage), no en el repositorio.
+### Instalable como app
+- Icono propio en el encabezado, favicon y pantalla de bloqueo
+- Manifest incluido para "Agregar a pantalla de inicio" en Android e
+  iPhone, abriendo a pantalla completa sin barra del navegador
+
+## Como probarla antes de publicar
+1. Descomprime este paquete.
+2. Haz doble clic en `index.html` para abrirla en tu navegador.
+3. Pruébala: agrega un turno, exporta a Excel, activa la contraseña,
+   cambia el color de fondo, prueba el modo oscuro.
+
+## Como subirla a GitHub (repositorio nuevo)
+1. Crea un repositorio nuevo en GitHub (por ejemplo "mi-agenda").
+2. Sube `index.html` y este `README.md` a la raíz (usando "uploading
+   an existing file" en la página del repo, sin necesidad de Git por
+   línea de comandos).
+3. Si quieres un link público, activa GitHub Pages en
+   Settings > Pages, eligiendo la rama `main` y carpeta `/ (root)`.
+4. Una vez publicada por HTTPS (GitHub Pages lo es), la biometría
+   (huella/Face ID) funcionará correctamente.
+
+## Instalar en el celular
+**Android (Chrome):** menú de tres puntos → "Agregar a pantalla de
+inicio" o "Instalar aplicación".
+**iPhone (Safari):** ícono de compartir → "Agregar a pantalla de
+inicio".
+
+## Datos y privacidad
+Todos los datos (turnos, contraseña, preferencias) se guardan
+únicamente en el navegador del dispositivo donde se use (localStorage).
+No se envían a ningún servidor ni se guardan en el repositorio.
 
 ## Version
-v2.0 - nuevo icono de marca (calendario + esmalte), reemplazando el icono
-anterior en toda la app.
+v1.0 — primera version consolidada del proyecto, reuniendo todas las
+funciones desarrolladas y verificadas.
